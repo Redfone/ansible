@@ -1,0 +1,16 @@
+---
+# tasks file for installing required packages
+
+- name: Install asterisk perl agi pre-requisites via yum
+  yum: 
+    name:
+      - perl-POSIX-strptime.x86_64
+      - perl-Mail-IMAPClient.noarch
+      - perl-Date-Manip.noarch
+      - perl-SOAP-Lite.noarch
+      - perl-String-CRC32.x86_64
+      - perl-String-Random.noarch
+      - perl-XML-Simple.noarch
+      - perl-Data-UUID.x86_64
+      - perl-CPAN.noarch
+    state: present

@@ -1,0 +1,39 @@
+# Install Dahdi/Libpri to support telephony hardware 
+# Install Dahdi first, followed by Libpri and finally Asterisk.
+
+
+# DAHDI INSTALL ROUTINE
+- name: Remove existing DAHDI install source dir
+  file: "path={{ asterisk_dahdi_srcdir }} state=absent"
+
+- name: Create DAHDI install source dir
+  file: "path={{ asterisk_dahdi_srcdir }} state=directory"  
+
+
+- name: Download and extract DAHDI source
+  unarchive: "src={{ asterisk_url_dahdi }} dest={{ asterisk_dahdi_srcdir }} remote_src=yes extra_opts=--strip-components=1"
+
+- name: Build DAHDI from tarball
+  command: "{{ item }} chdir={{ asterisk_dahdi_srcdir }}"
+  with_items:
+    - make all
+    - make install
+    - make config
+
+# LIBPRI INSTALL ROUTINE
+- name: Remove existing install source dir
+  file: "path={{ asterisk_srcdir_libpri }} state=absent"
+
+- name: Create LIBPRI install source dir
+  file: "path={{ asterisk_srcdir_libpri }} state=directory"  
+
+
+- name: Download and extract LIBPRI source
+  unarchive: "src={{ asterisk_url_libpri }} dest={{ asterisk_srcdir_libpri }} remote_src=yes extra_opts=--strip-components=1"
+
+- name: Build LIBPRI from tarball
+  command: "{{ item }} chdir={{ asterisk_srcdir_libpri }}"
+  with_items:
+    - make
+    - make install
+    

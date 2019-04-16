@@ -1,0 +1,15 @@
+# Jansson install setup logic
+# This may be installable through yum. Need to confirm.
+- name: Create jansson install directory
+  file: "path={{ jansson_srcdir }} state=directory"
+
+- name: Download and install jansson
+  unarchive: "src={{ jansson_url }} dest={{ jansson_srcdir }} remote_src=yes extra_opts=--strip-components=1"
+
+- name: Build Jansson from tarball
+  command: "{{ item }} chdir={{ jansson_srcdir }}"
+  with_items:
+    #- autoreconf -fi
+    - ./configure --libdir=/usr/lib64
+    - make
+    - make install

@@ -1,0 +1,53 @@
+---
+# tasks file for installing required packages
+
+
+- name: Install epel
+  yum: "pkg=epel-release state=installed"
+
+
+- name: Install asterisk pre-requisites via yum
+  yum: 
+    name:
+     - lynx
+     - tftp-server
+     - unixODBC
+     - mysql-connector-odbc
+     - mariadb-server
+     - mariadb
+     - MySQL-python
+     - httpd
+     - ncurses-devel
+     - sendmail
+     - sendmail-cf
+     - sox
+     - newt-devel
+     - libxml2-devel
+     - libtiff-devel
+     - audiofile-devel
+     - gtk2-devel
+     - subversion
+     - kernel-devel
+     - autoconf
+     - automake
+     - libtool-ltdl-devel.x86_64
+     - git
+     - crontabs
+     - cronie
+     - cronie-anacron
+     - wget
+     - vim
+     - uuid-devel
+     - sqlite-devel
+     - net-tools
+     - gnutls-devel
+     - python-devel
+     - texinfo
+     - libuuid-devel
+     - nodejs
+    state: present
+
+- name: install the 'Development tools' package group
+  yum:
+    name: "@Development tools"
+    state: present

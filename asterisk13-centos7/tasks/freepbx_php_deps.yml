@@ -1,0 +1,23 @@
+---
+
+- name: Install php webstatic repo
+  yum: 
+    name: "https://mirror.webtatic.com/yum/el7/webtatic-release.rpm"
+    state: present
+       
+
+- name: Install freepbx php5.6 pre-requisites via yum
+  yum: 
+    name:
+     - php56w 
+     - php56w-pdo
+     - php56w-mysql
+     - php56w-mbstring
+     - php56w-pear
+     - php56w-process
+     - php56w-xml
+     - php56w-opcache
+     - php56w-ldap
+     - php56w-intl
+     - php56w-soap
+    state: present

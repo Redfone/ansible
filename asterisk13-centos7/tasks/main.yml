@@ -1,0 +1,16 @@
+---
+# tasks file for asterisk13-centos7
+
+- include_tasks: selinux.yml  
+- include_tasks: yum_base_packages.yml
+- include_tasks: freepbx_php_deps.yml
+- include_tasks: asterisk_agi_perl_deps.yml
+- include_tasks: mariadb_initialize.yml
+- include_tasks: jansson_install.yml
+# Comment out the below asterisk_dahdi_install.yml task if target is a virtual host or no telephony hardware is being installed.
+- include_tasks: asterisk_dahdi_install.yml
+- include_tasks: asterisk_install.yml
+- include_tasks: freepbx_install.yml
+
+
+

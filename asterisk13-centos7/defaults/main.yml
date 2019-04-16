@@ -1,0 +1,37 @@
+---
+# defaults file for asterisk13-centos7
+
+# msi-mysql_root_pass >> if you already set the root password then assign it
+# to this variable. by default there is no password.
+msi_mysql_root_pass: ''
+
+# msi-new_mysql_root_pass >> required. this will be the new mysql root password.
+# if you don't want to change your old password then you can assign your old
+# password to it too.
+# oh and don't forget, always use ansible vault for sensitive data :)
+msi_new_mysql_root_pass: 'centos7dbtest!!'
+
+# Asterisk variables for asterisk_install.yml
+asterisk_user: asterisk
+asterisk_group: asterisk
+asterisk_srcdir: /usr/src/asterisk
+asterisk_url: http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
+
+# Asterisk LIBPRI Library
+asterisk_url_libpri: http://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz
+asterisk_srcdir_libpri: /usr/src/libpri
+
+# Asterisk DAHDI Library
+asterisk_url_dahdi: http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/releases/dahdi-linux-complete-2.11.1+2.11.1.tar.gz
+# Seems to be some kernel conflict issues on Centos7 with dahdi-current.
+#asterisk_url_dahdi: http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
+asterisk_dahdi_srcdir: /usr/src/dahdi/
+#asterisk_dahdi_support: false
+
+# jansson vars
+jansson_url: http://www.digip.org/jansson/releases/jansson-2.12.tar.gz
+jansson_srcdir: /usr/src/jansson
+
+# vars for freepbx_install.yml
+freepbx_url: http://mirror.freepbx.org/modules/packages/freepbx/freepbx-14.0-latest.tgz
+freepbx_srcdir: /usr/src/freepbx
