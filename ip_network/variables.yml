@@ -1,0 +1,27 @@
+#
+# Variables used with different playbooks
+#
+aws_ami_image: ami-e1de3a98
+image_vpc: vpc-73a5e31b
+ec2_instance_type: t2.micro
+sg_group_id: sg-2c308449
+vpc_subnet_id: subnet-40a5e328
+aws_region: eu-west-1
+aws_access_key: "xxxxxxxxxx"
+aws_secret_key: "xxxxxxxxxxx"
+aws_default_region: "eu-west-1"
+#
+# These are the primary variables that may need to be changed
+# The key should be a key that already exists in the aws account
+#
+key_name: your-key-name 
+server_name: server-host-name
+#
+# Ip information we want to assign to this EC2.
+# this info will populate the eth0.cfg on ubuntu
+#
+ip_address: 10.x.x.x
+ip_gateway: 10.x.x.x
+ip_nameserver: 10.x.x.x
+ip_netmask: 255.255.254.0
+ip_network: 10.x.x.255

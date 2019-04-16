@@ -1,0 +1,32 @@
+---
+#
+# Playbook to set IP, Gateway, DNS on Ubuntu Server
+#
+- hosts: tag_Name_DOCKER_Ansible_Test
+  user: ubuntu
+  become: yes
+  become_method: sudo
+  become_user: root
+  gather_facts: False
+
+
+  tasks:
+    - name: wait for ssh
+      wait_for:
+        port: 22
+        delay: 5
+
+    - name: Include variables file
+      include_vars: variables.yml
+
+    # Update your src: file location
+    - name: use template to config network
+      template:
+       src: /etc/ansible/docker-server/eth0.cfg
+       dest: /etc/network/interfaces.d/eth0.cfg
+       owner: root
+       group: root
+
+
+    - name: Rebooting
+      raw: /sbin/reboot
