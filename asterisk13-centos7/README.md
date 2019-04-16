@@ -21,7 +21,7 @@ All role variables can be found in the defaults/main.yml
 
 Dependencies
 ------------
-In /defaults/main.yml comment out the asterisk_dahdi_install.yml task if target is a virtual host or no telephony hardware is being installed.
+In /tasks/main.yml comment out the asterisk_dahdi_install.yml task if target is a virtual host or no telephony hardware is being installed.
  include_tasks: asterisk_dahdi_install.yml
 
 Example Playbook
