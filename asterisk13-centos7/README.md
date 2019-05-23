@@ -32,6 +32,10 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: servers
       roles:
          - { role: asterisk13-centos7, x: 42 }
+         
+Execute
+--------
+ansible-playbook playbook.yml --private-key=~/.ssh/keyname -i hosts -u username -b
 
 License
 -------
