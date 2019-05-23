@@ -35,7 +35,7 @@ Including an example of how to use your role (for instance, with variables passe
          
 Execute
 --------
-ansible-playbook playbook.yml --private-key=~/.ssh/keyname -i hosts -u username -b
+  ansible-playbook playbook.yml --private-key=~/.ssh/keyname -i hosts -u username -b
 
 License
 -------
