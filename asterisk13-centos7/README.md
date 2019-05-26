@@ -4,6 +4,7 @@ asterisk13-centos7
 
 Installs Asterisk13 & FreePBX on a base Centos7 host
 Installs Asterisk, Dahdi, Libpri and FreePBX on a base Centos7 box.
+Based on this Freepbx guide: https://wiki.freepbx.org/display/FOP/Installing+FreePBX+14+on+CentOS+7
 
 
 Requirements
