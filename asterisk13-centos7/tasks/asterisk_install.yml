@@ -5,7 +5,7 @@
   group: "name={{ asterisk_group }} state=present"
 
 - name: "Add Asterisk User"
-  user: "name={{ asterisk_user }} comment='Asterisk process user' shell=/sbin/nologin group={{ asterisk_group }}"
+  user: "name={{ asterisk_user }} comment='Asterisk process user' shell=/bin/bash group={{ asterisk_group }}"
 
 
 - name: Remove existing install source dir

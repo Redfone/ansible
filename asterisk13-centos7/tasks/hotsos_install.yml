@@ -1,0 +1,15 @@
+## Upload and install HOTSOS package
+- name: Extract hotsos_file into /temp directory
+  unarchive:
+    src: "{{ hotsos_file }}"
+    dest: /tmp/
+
+
+- name: Change into temp directory and run HOTSOS install script
+  shell: ./install.sh
+  args:
+    chdir: /tmp/
+
+- name: Unconditionally reboot the machine with all defaults
+  reboot:
+    reboot_timeout: 20

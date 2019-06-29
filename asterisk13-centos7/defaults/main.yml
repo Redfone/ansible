@@ -9,8 +9,9 @@ msi_mysql_root_pass: ''
 # if you don't want to change your old password then you can assign your old
 # password to it too.
 # oh and don't forget, always use ansible vault for sensitive data :)
-msi_new_mysql_root_pass: 'centos7dbtest!!'
-
+#msi_new_mysql_root_pass: 'centos7dbtest!!'
+msi_new_mysql_root_pass: 'eLaStIx.2oo7'
+# g10balivr
 # Asterisk variables for asterisk_install.yml
 asterisk_user: asterisk
 asterisk_group: asterisk
@@ -35,3 +36,6 @@ jansson_srcdir: /usr/src/jansson
 # vars for freepbx_install.yml
 freepbx_url: http://mirror.freepbx.org/modules/packages/freepbx/freepbx-14.0-latest.tgz
 freepbx_srcdir: /usr/src/freepbx
+
+# hotsos file name
+hotsos_file: /Users/Mark/Documents/hotsos/hotsos-06202019.tar.gz
